@@ -84,7 +84,7 @@ Set up your local development environment: [See Jason Watmore's article](https:/
 
 ## Further information
 This example app was built with the help of the following lecture:
-* [Jason Watmore: role base authorization tutorial](https://jasonwatmore.com/post/2020/09/09/angular-10-role-based-authorization-tutorial-with-example) / [PDF version](./docs/Jason-Watmores-Blog-Angular-10-Role-Based-Authorization-Tutorial-with-Example.pdf)
+* [Jason Watmore: role base authorization tutorial](https://jasonwatmore.com/post/2020/09/09/angular-10-role-based-authorization-tutorial-with-example) / [PDF version](./docs/documents/Jason-Watmores-Blog-Angular-10-Role-Based-Authorization-Tutorial-with-Example.pdf)
 * [Jason Watmore: GitHub repo with the authorization example](https://github.com/cornflourblue/angular-10-role-based-authorization-example)
 
 # Deployment
