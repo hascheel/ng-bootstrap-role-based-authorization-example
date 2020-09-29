@@ -1,27 +1,94 @@
-# NgBootstrapRoleBasedAuthClient
+# Angular 10 with Bootstrap - Role Based Authorization Example
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
+An example of how to implement role based authorization / access control in Angular 10. Using JWT authentication with refresh tokens and a fake backend.
 
-## Development server
+There are three pages - a login page, a home page and an admin page. There are two roles - a regular user (Role.User) that can access the home page, and an admin user (Role.Admin) that can access everything.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Table of content
+* [Building the client](#Building-the-client)
+  * [Used technologies and components](#Used-technologies-and-components)
+  * [Project structure](#Project-structure)
+  * [Implementations](#Implementations)
+* [Documentation](#Documentation)
+  * [TypeScript tsconfig.json](#TypeScript-tsconfig.json)
+  * [Further information](#Further-information)
+* [Deployment](#Deployment)
 
-## Code scaffolding
+---
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Building the client
 
-## Build
+## Used technologies and components
+* For styling: [Bootstrap 4.5 CSS](https://getbootstrap.com/docs/4.5/getting-started/introduction/)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Project structure
 
-## Running unit tests
+Start a new Angular 10 project with routing module:
+```shell
+$ ng new ng-bootstrap-role-based-auth-client
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+The `index.ts` files in each folder are barrel files that group the exported modules from a folder together so they can be imported using the folder path rather than the full module path, and to enable importing multiple modules in a single import (e.g. `import { AuthenticationService, UserService } from '../_services'`).
 
-## Running end-to-end tests
+Path aliases `@app` and `@environments` have been configured in `tsconfig.base.json` that map to the `/src/app` and `/src/environments` directories. This allows imports to be relative to the app and environments folders by prefixing import paths with aliases instead of having to use long relative paths (e.g. `import MyComponent from '../../../MyComponent'`).
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## TypeScript tsconfig.json
 
-## Further help
+**Path: /tsconfig.json**
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+The paths property has been added to map the `@app` and `@environments` aliases to the `/src/app` and `/src/environments` directories. This allows imports to be relative to the app and environments folders by prefixing import paths with aliases instead of having to use long relative paths (e.g. `import MyComponent from '@app/MyComponent'` instead of `import MyComponent from '../../../MyComponent'`).
+
+## Implementations
+
+**/_helpers/**:
+* add auth.guard.ts
+* add error.interceptor.ts
+* fake-backend.ts
+* jwt.interceptor.ts
+
+**/_models/**:
+* role.ts
+* user.ts
+
+**/_services/**:
+* authentication.service.ts
+* user.service.ts
+
+**Components**:
+* admin
+  ```shell
+  $ ng generate component admin
+  ```
+
+* home
+  ```shell
+  $ ng generate component home
+  ```
+
+* login
+  ```shell
+  $ ng generate component login
+  ```
+
+**configure AppRoutingModule**
+
+**configure AppComponentTemplate**
+
+**configure AppComponent**
+
+**configure AppModule**
+
+# Documentation
+
+Set up your local development environment: [See Jason Watmore's article](https://jasonwatmore.com/post/2020/06/02/angular-setup-development-environment)
+
+## Further information
+This example app was built with the help of the following lecture:
+* [Jason Watmore: role base authorization tutorial](https://jasonwatmore.com/post/2020/09/09/angular-10-role-based-authorization-tutorial-with-example) / [PDF version](./docs/Jason-Watmores-Blog-Angular-10-Role-Based-Authorization-Tutorial-with-Example.pdf)
+* [Jason Watmore: GitHub repo with the authorization example](https://github.com/cornflourblue/angular-10-role-based-authorization-example)
+
+# Deployment
+
+```shell
+$ ng deploy --base-href=https://scheel.dev/ng-bootstrap-role-based-authorization-example/
+```
