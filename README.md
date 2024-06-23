@@ -93,6 +93,9 @@ This example app was built with the help of the following lecture:
 $ ng deploy --base-href=https://scheel.dev/ng-bootstrap-role-based-authorization-example/
 ```
 
+# About
+This is an implementation of a tutorial of jasonwatmore.com.
+
 ## Original Licence
 
 The original version of this software can be found here: [angular-10-role-based-authorization-example](https://github.com/cornflourblue/angular-10-role-based-authorization-example)
