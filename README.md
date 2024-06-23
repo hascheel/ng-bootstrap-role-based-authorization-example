@@ -1,6 +1,6 @@
 # Angular 10 with Bootstrap - Role Based Authorization Example
 
-An example of how to implement role based authorization / access control in Angular 10. Using JWT authentication with refresh tokens and a fake backend. This is a implementation of a tutorial of [Jason Watmore](https://jasonwatmore.com/post/2020/09/09/angular-10-role-based-authorization-tutorial-with-example).
+An example of how to implement role based authorization / access control in Angular 10. Using JWT authentication with refresh tokens and a fake backend.
 
 There are three pages - a login page, a home page and an admin page. There are two roles - a regular user (Role.User) that can access the home page, and an admin user (Role.Admin) that can access everything.
 
@@ -94,7 +94,7 @@ $ ng deploy --base-href=https://scheel.dev/ng-bootstrap-role-based-authorization
 ```
 
 # About
-This is an implementation of a tutorial of jasonwatmore.com.
+This is an implementation of a tutorial of [Jason Watmore](https://jasonwatmore.com/post/2020/09/09/angular-10-role-based-authorization-tutorial-with-example).
 
 ## Original Licence
 
